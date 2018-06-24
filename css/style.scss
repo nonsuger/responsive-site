@@ -1,0 +1,151 @@
+@import "compass";
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+$whiteColor: #FFFFFF;
+$baseColor: #C4FFC5;
+$subColor: #1B591C;
+$accentColor: #FFFF77;
+$baseFontFamily :"游ゴシック", YuGothic, "メイリオ",Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+
+html{ font-size: 62.5%; }
+
+body {
+    color: subColor;
+    font-size: 1.4rem;
+    font-family: $baseFontFamily;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    background-color: $baseColor;
+}
+
+header {
+    float: left;
+    display: flex;
+    img {
+        height: 250px;
+        width: 100%;
+    }
+}
+
+// font
+.abel {
+  font-family: 'Abel', sans-serif;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+
+// layout
+.text-center {
+  text-align: center;
+}
+
+.block-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// common styles
+a {
+    text-decoration: none;
+    @include link-colors($accentColor, lighten($accentColor, 30%), lighten($accentColor, 5%), darken($accentColor, 10%));
+    &:hover {
+        background: lighten($subColor, 30%);
+    }
+}
+
+section {
+  padding: 60px 0;
+  .container {
+    width: 90%;
+    @extend .block-center;
+  }
+  h2 {
+    @extend .abel;
+    font-size: 3.2rem;
+    @extend .uppercase;
+  }
+}
+
+#foods {
+    .container {
+        @include display-flex;
+        justify-content: space-between;
+        @include flex-direction(column);
+    }
+
+    h2 {
+        color: $baseColor;
+        margin-bottom: 60px;
+    }
+
+    .content {
+        background-color: $subColor;
+        color: $accentColor;
+        @include flex(1);
+        margin: 10px 0;
+        padding: 20px;
+        @include border-radius(4px);
+        @include box-sizing(border-box);
+    }
+    img {
+        height: 300px;
+        // width: 200px;
+        width: 80%;
+        margin-bottom: 5px;
+        padding-top: 15px;
+        font-size: 4.5rem;
+        text-align: center;
+        @include box-sizing(border-box);
+        @include border-radius(20%);
+        @extend .block-center;
+    }
+    
+    h3 {
+        @extend .abel;
+        @extend .uppercase;
+        color: $accentColor;
+        margin-bottom:10px;
+        font-size: 2.0rem;
+        font-weight: bold;
+    }
+}
+
+#more {
+   .moreButton {
+        width: 10%;
+        background: $subColor;
+        color: $whiteColor;
+        @include box-sizing(border-box);
+        @include border-radius(5px);
+        @extend .block-center;
+        @extend .text-center;
+    }
+}
+
+// desktop
+@media (min-width: 768px) {
+    header {
+        img {
+            height: 500px;
+            width: 100%;
+        }
+    }
+
+    #foods {
+        .container {
+            @include flex-direction(row);
+            justify-content: space-between;
+        }
+        .content {
+            margin: 0 3%;
+            width: 33%;
+            height: auto;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
