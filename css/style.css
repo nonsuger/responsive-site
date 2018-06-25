@@ -4,19 +4,19 @@ html {
   font-size: 62.5%; }
 
 body {
-  color: subColor;
+  color: #FFFF77;
   font-size: 1.4rem;
   font-family: "游ゴシック", YuGothic, "メイリオ", Verdana, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   line-height: 1.6;
   letter-spacing: 0.1em;
   background-color: #C4FFC5; }
 
-header {
-  float: left;
-  display: flex; }
-  header img {
-    height: 250px;
-    width: 100%; }
+header #top {
+  background-image: url("../images/top.jpg");
+  height: 250px;
+  width: 100%;
+  background-size: cover;
+  background-position: center center; }
 
 .abel, section h2, #foods h3 {
   font-family: 'Abel', sans-serif; }
@@ -24,10 +24,10 @@ header {
 .uppercase, section h2, #foods h3 {
   text-transform: uppercase; }
 
-.text-center, #more .moreButton {
+.text-center, footer .moreButton {
   text-align: center; }
 
-.block-center, section .container, #foods img, #more .moreButton {
+.block-center, section .container, #foods img, footer .moreButton {
   display: block;
   margin-left: auto;
   margin-right: auto; }
@@ -58,7 +58,7 @@ section {
   -webkit-flex-direction: column;
   flex-direction: column; }
 #foods h2 {
-  color: #C4FFC5;
+  color: #1B591C;
   margin-bottom: 60px; }
 #foods .content {
   background-color: #1B591C;
@@ -92,21 +92,21 @@ section {
   font-size: 2.0rem;
   font-weight: bold; }
 
-#more .moreButton {
-  width: 10%;
-  background: #1B591C;
-  color: #FFFFFF;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px; }
+footer {
+  background: #1B591C; }
+  footer .moreButton {
+    width: 30%;
+    background: #79a959;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; }
 
-@media (min-width: 768px) {
-  header img {
-    height: 500px;
-    width: 100%; }
+@media (min-width: 769px) {
+  header #top {
+    height: 500px; }
 
   #foods .container {
     -webkit-flex-direction: row;
